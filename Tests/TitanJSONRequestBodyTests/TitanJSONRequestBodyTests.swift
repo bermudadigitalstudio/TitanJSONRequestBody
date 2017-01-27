@@ -5,7 +5,7 @@ import TitanCore
 class TitanJSONRequestBodyTests: XCTestCase {
     func testExample() {
       let jsonBody = "{\"data\": [1, 2, 3]}"
-      let req: RequestType = Request("POST", "/ingest", jsonBody, headers: [])
+      let req: RequestType = Request(method: "POST", path: "/ingest", body: jsonBody, headers: [])
       guard let json = req.json as? Dictionary<String, Array<Int>> else {
         XCTFail("Received: \(req.json)")
         return
